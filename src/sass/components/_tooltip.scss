@@ -12,6 +12,7 @@
   border-radius: 2px;
   user-select: none;
   opacity: 0;
+  visibility: hidden;
 
   transition: top 0ms $ease-out-function 450ms,
               transform 450ms $ease-out-function 0ms,
@@ -40,6 +41,7 @@
   &.mui-is-shown {
     top: -16px;
     opacity: 1;
+    visibility: visible;
     transform: translate3d(0, 16px, 0);
 
     transition:
