@@ -17,6 +17,13 @@ var DialogPage = React.createClass({
   render: function() {
 
     var code =
+      '//Full width and height\n' +
+      '<Dialog\n' +
+      '  title="Dialog With Full Width/Height"\n' +
+      '  fullHeight={true}\n' +
+      '  fullWidth={true}>\n' +
+      '    {someSuperLongContent} \n' +
+      '</Dialog>\n\n\n' +
       '//Standard Actions\n' +
       'var standardActions = [\n' +
       '  { text: \'Cancel\' },\n' +
@@ -26,9 +33,8 @@ var DialogPage = React.createClass({
       '  title="Dialog With Standard Actions"\n' +
       '  actions={standardActions}\n' +
       '  actionFocus="submit"\n' +
-      '  modal={this.state.modal}\n' +
-      '  dismissOnClickAway={this.state.dismissOnClickAway}>\n' +
-      '  The actions in this window are created from the json that\'s passed in. \n' +
+      '  modal={this.state.modal}>\n' +
+      '    The actions in this window are created from the json that\'s passed in. \n' +
       '</Dialog>\n\n' +
       '//Custom Actions\n' +
       'var customActions = [\n' +
@@ -46,13 +52,25 @@ var DialogPage = React.createClass({
       '  actions={customActions}\n' +
       '  modal={this.state.modal}\n' +
       '  dismissOnClickAway={this.state.dismissOnClickAway}>\n' +
-      '  The actions in this window were passed in as an array of react objects.\n' +
+      '    The actions in this window were passed in as an array of react objects.\n' +
       '</Dialog>\n';
 
     var componentInfo = [
       {
         name: 'Props',
         infoArray: [
+          {
+            name: 'fullWidth',
+            type: 'bool',
+            header: 'optional (default: false)',
+            desc: 'Uses the full width of the page for the content (less $desktop-keyline-increment for margin).'
+          },
+          {
+            name: 'fullHeight',
+            type: 'bool',
+            header: 'optional (default: false)',
+            desc: 'Uses the full height of the page for the content (less $desktop-keyline-increment for margin).'
+          },
           {
             name: 'actions',
             type: 'array',
@@ -74,7 +92,7 @@ var DialogPage = React.createClass({
           {
             name: 'openImmediately',
             type: 'bool',
-            header: 'default: false',
+            header: 'optional (default: false)',
             desc: 'Set to true to have the dialog automatically open on mount.'
           },
           {
@@ -86,8 +104,10 @@ var DialogPage = React.createClass({
           {
             name: 'modal',
             type: 'bool',
-            header: 'optional',
-            desc: 'Determine if a dialog should display as a modal dialog. Default value is false.'
+            header: 'optional (default: false)',
+            desc: 'Determine if a dialog should display as a modal dialog - ' +
+                  'What this really means is if clicking outside will dismiss the dialog or not (false means it will, true means it won\'t, ' +
+                  'yes, I know, it\'s a bad name for this prop).'
           }
         ]
       },
@@ -147,9 +167,54 @@ var DialogPage = React.createClass({
         code={code}
         componentInfo={componentInfo}>
 
+        <RaisedButton label="Full Width/Height" onClick={this.handleFullDialogClick} />
+        <br/><br/>
         <RaisedButton label="Standard Actions" onClick={this.handleStandardDialogClick} />
         <br/><br/>
         <RaisedButton label="Custom Actions" onClick={this.handleCustomDialogClick} />
+
+        <Dialog ref="fullDialog" title="Dialog With Full Width/Height" fullWidth={true} fullHeight={true}>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+          Some <br/>
+          Super <br/>
+          Long <br/>
+          Content <br/>
+          <br/><br/>
+        </Dialog>
 
         <Dialog
           ref="standardDialog"
@@ -198,6 +263,10 @@ var DialogPage = React.createClass({
 
   handleStandardDialogClick: function() {
     this.refs.standardDialog.show();
+  },
+
+  handleFullDialogClick: function() {
+    this.refs.fullDialog.show();
   }
 
 });

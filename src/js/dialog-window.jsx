@@ -19,8 +19,10 @@ var DialogWindow = React.createClass({
     onClickAway: React.PropTypes.func,
     onDismiss: React.PropTypes.func,
     onShow: React.PropTypes.func,
-    repositionOnUpdate: React.PropTypes.bool,
-    modal: React.PropTypes.bool
+    //repositionOnUpdate: React.PropTypes.bool,
+    modal: React.PropTypes.bool,
+    fullHeight: React.PropTypes.bool,
+    fullWidth: React.PropTypes.bool
   },
 
   windowListeners: {
@@ -30,8 +32,9 @@ var DialogWindow = React.createClass({
   getDefaultProps: function() {
     return {
       actions: [],
-      repositionOnUpdate: true,
-      modal: false
+      //repositionOnUpdate: true,
+      modal: false,
+      fullHeight: false
     };
   },
 
@@ -60,6 +63,8 @@ var DialogWindow = React.createClass({
       'mui-is-shown': this.state.open
     });
     var contentClasses = 'mui-dialog-window-contents';
+    if (this.props.fullHeight) contentClasses += ' mui-dialog-window-full-height';
+    if (this.props.fullWidth) contentClasses += ' mui-dialog-window-full-width';
     var actions = this._getActionsContainer(this.props.actions);
 
     if (this.props.contentClassName) {
@@ -151,25 +156,25 @@ var DialogWindow = React.createClass({
   },
 
   _positionDialog: function() {
-    var container, dialogWindow, containerHeight, dialogWindowHeight;
-
-    if (this.state.open) {
-
-      container = React.findDOMNode(this),
-      dialogWindow = React.findDOMNode(this.refs.dialogWindow),
-      containerHeight = container.offsetHeight,
-
-      //Reset the height in case the window was resized.
-      dialogWindow.style.height = '';
-      dialogWindowHeight = dialogWindow.offsetHeight;
-
-      //Vertically center the dialog window, but make sure it doesn't
-      //transition to that position.
-      if (this.props.repositionOnUpdate || !container.style.paddingTop) {
-        container.style.paddingTop = 
-          ((containerHeight - dialogWindowHeight) / 2) - 64 + 'px';
-      }
-    }
+    //var container, dialogWindow, containerHeight, dialogWindowHeight;
+    //
+    //if (this.state.open) {
+    //
+    //  container = React.findDOMNode(this),
+    //  dialogWindow = React.findDOMNode(this.refs.dialogWindow),
+    //  containerHeight = container.offsetHeight,
+    //
+    //  //Reset the height in case the window was resized.
+    //  dialogWindow.style.height = '';
+    //  dialogWindowHeight = dialogWindow.offsetHeight;
+    //
+    //  //Vertically center the dialog window, but make sure it doesn't
+    //  //transition to that position.
+    //  if (this.props.repositionOnUpdate || !container.style.paddingTop) {
+    //    container.style.paddingTop =
+    //      ((containerHeight - dialogWindowHeight) / 2) - 64 + 'px';
+    //  }
+    //}
   },
   
   _focusOnAction: function() {

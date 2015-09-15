@@ -13,6 +13,7 @@ Check out our [github io site](http://sarink.github.io/material-ui-with-sass) fo
 
 ## Notable Differences
 * Uses [SASS](http://sass-lang.com) instead of inline-styles or Less (obviously)
+* [Dialog Component](http://sarink.github.io/material-ui-with-sass/#/components/dialog) has been improved
 * New [Accordion Component!](http://sarink.github.io/material-ui-with-sass/#/components/accordion)
 * We've added a [SpeedDial](http://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions) to our [FloatingActionButton](http://sarink.github.io/material-ui-with-sass/#/components/buttons)
 * Material fonts and icons are automatically included (from Google's CDN). Plus, a handy new [Icon Component](http://sarink.github.io/material-ui-with-sass/#/components/icons)
