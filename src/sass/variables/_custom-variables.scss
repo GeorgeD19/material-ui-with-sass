@@ -169,5 +169,11 @@ $slider-selection-color: $primary-3-color !default;
 $app-bar-height: $desktop-keyline-increment !default;
 $left-nav-width: ($desktop-keyline-increment * 4) !default;
 
+// Dialog
+$dialog-standard-height: 184px !default;
+$dialog-standard-width: 75% !default;
+$dialog-standard-max-width: $desktop-keyline-increment * 12 !default;
+$dialog-gutter: $desktop-keyline-increment !default;
+
 // TODO remove this
 $mui-drop-down-right-offset: 24px !default;

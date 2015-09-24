@@ -1,5 +1,3 @@
-$standard-dialog-height: 184px;
-
 .mui-dialog-window {
   position: fixed;
   z-index: 10;
@@ -11,15 +9,15 @@ $standard-dialog-height: 184px;
   .mui-dialog-window-contents {
     @include ease-out();
     position: relative;
-    width: 75%;
-    max-width: ($desktop-keyline-increment * 12);
+    width: $dialog-standard-width;
+    max-width: ($dialog-standard-max-width * 12);
     margin: 0 auto;
     z-index: 10;
     background: $canvas-color;
     opacity: 0;
     &.mui-dialog-window-full-width {
       width: 99%;
-      max-width: calc(100% - #{$desktop-keyline-increment * 2});
+      max-width: calc(100% - #{$dialog-gutter * 2});
     }
   }
 
@@ -41,14 +39,14 @@ $standard-dialog-height: 184px;
     .mui-dialog-window-contents {
       height: 200px;
       &:not(.mui-dialog-window-full-height) {
-        margin-top: calc(50vh - #{$standard-dialog-height/2} - #{$desktop-keyline-increment});
+        margin-top: calc(50vh - #{$dialog-standard-height/2} - #{$dialog-gutter});
       }
       &.mui-dialog-window-full-height {
-        height: calc(100vh - #{$desktop-keyline-increment * 2});
+        height: calc(100vh - #{$dialog-gutter * 2});
       }
       overflow-y: scroll;
       opacity: 1;
-      transform: translate3d(0, $desktop-keyline-increment, 0);
+      transform: translate3d(0, $dialog-gutter, 0);
       &.mui-paper > .mui-paper-container {
         height: 0;
       }
