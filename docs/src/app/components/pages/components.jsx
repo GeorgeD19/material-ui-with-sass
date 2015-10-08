@@ -9,6 +9,7 @@ var Components = React.createClass({
       { route: 'app-bar', text: 'AppBar'},
       { route: 'avatar', text: 'Avatar'},
       { route: 'buttons', text: 'Buttons'},
+      { route: 'cards', text: 'Cards'},
       { route: 'date-picker', text: 'Date Picker'},
       { route: 'dialog', text: 'Dialog'},
       { route: 'dropdown-menu', text: 'Dropdown Menu'},

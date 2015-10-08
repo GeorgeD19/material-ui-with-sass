@@ -13,9 +13,10 @@ Check out our [github io site](http://sarink.github.io/material-ui-with-sass) fo
 
 ## Notable Differences
 * Uses [SASS](http://sass-lang.com) instead of inline-styles or Less (obviously)
-* [Dialog Component](http://sarink.github.io/material-ui-with-sass/#/components/dialog) has been improved
 * New [Accordion Component!](http://sarink.github.io/material-ui-with-sass/#/components/accordion)
 * We've added a [SpeedDial](http://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions) to our [FloatingActionButton](http://sarink.github.io/material-ui-with-sass/#/components/buttons)
+* New [Card Component!](http://sarink.github.io/material-ui-with-sass/#/components/cards)
+* [Dialog Component](http://sarink.github.io/material-ui-with-sass/#/components/dialog) has been improved
 * Material fonts and icons are automatically included (from Google's CDN). Plus, a handy new [Icon Component](http://sarink.github.io/material-ui-with-sass/#/components/icons)
 * [Tabs](http://sarink.github.io/material-ui-with-sass/#/components/tabs) are more customizable
 * react-tap-event-plugin is no longer a dependency. Due to [this bug](https://github.com/zilverline/react-tap-event-plugin/issues/22) We have removed all references of "TouchTap" and replaced with "Click", for the time being
